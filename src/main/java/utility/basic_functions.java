@@ -16,7 +16,7 @@ public class basic_functions
 {
 
     public WebDriverWait wait;
-	public WebDriver driver;  
+    public WebDriver driver;  
     private WebElements elements;
 
 	public basic_functions(WebDriver driver)	  
