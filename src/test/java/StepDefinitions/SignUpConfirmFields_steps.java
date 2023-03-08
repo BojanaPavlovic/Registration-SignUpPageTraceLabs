@@ -12,26 +12,26 @@ import utility.CrossBrowser;
 public class SignUpConfirmFields_steps {
 	
 	public SignUp_page sp;
-	public CrossBrowser cb;
-	public WebDriver driver;
+    	public CrossBrowser cb;
+    	public WebDriver driver;
 	
-	@Given("Navigate {string}")
-	public void url_navigate(String Url)
+    	@Given("Navigate {string}")
+    	public void url_navigate(String Url)
 	
-	{
-    	cb = new CrossBrowser();
-    	cb.setUp();
-    	sp = new SignUp_page(cb.driver);
-    	sp.get_url(Url);
+    	{
+    		cb = new CrossBrowser();
+    		cb.setUp();
+    		sp = new SignUp_page(cb.driver);
+    		sp.get_url(Url);
 	
-	}
+    	}
 
-	@But("before all user clicks first on GotIt COOKIES")
-	public void GotIt()
+    	@But("before all user clicks first on GotIt COOKIES")
+    	public void GotIt()
 
-	{
+    	{
 		sp.cookies();
-	}  
+    	}  
 
 	@And("into the Email field enter input {string}")
 	public void into_the_email_field_enter_input(String enter_mail_address) 
