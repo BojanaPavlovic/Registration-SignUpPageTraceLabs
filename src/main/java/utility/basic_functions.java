@@ -32,7 +32,7 @@ public class basic_functions
     
     {   
  
-		wait.until(ExpectedConditions.elementToBeClickable(locator));
+	wait.until(ExpectedConditions.elementToBeClickable(locator));
     	if (locator == null) 
         
     	{
@@ -120,11 +120,17 @@ public class basic_functions
     {
     	
 
-    	try {
+    	try 
+		
+	{
     	    WebElement passwordConfirmField = driver.findElement(By.id("ContentPlaceHolder1_txtPassword2"));
     	    passwordConfirmField.click();
-    	} catch (ElementClickInterceptedException e) {
-    	    // čekaj da se element učita i klikni ponovno
+    	} 
+	    
+	catch (ElementClickInterceptedException e) 
+	
+	{
+    	    // waiting to element loading and click on again
     	    WebDriverWait wait = new WebDriverWait(driver, 10);
     	    WebElement searchForm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".auto-search-max-height")));
     	    searchForm.click();
@@ -141,15 +147,15 @@ public class basic_functions
     public void actual_result(String title) 
     
     {
-		String actual_text = elements.element_for_assertion.getText();
-		Assert.assertEquals(title, actual_text);    	
-	}
+	    String actual_text = elements.element_for_assertion.getText();
+	    Assert.assertEquals(title, actual_text);    	
+    }
     
     
     public void cookies_button() 
     
     {
-    	waitIsClickable(elements.cookie);
+    	   waitIsClickable(elements.cookie);
     }
 
     
