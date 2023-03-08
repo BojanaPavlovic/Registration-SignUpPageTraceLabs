@@ -16,71 +16,66 @@ public class SignUp_steps{
 	public WebDriver driver;
 	    
 
-	@Given ("Navigate to the {string}")
-	public void navigate_to_the (String URL) 
+    @Given ("Navigate to the {string}")
+    public void navigate_to_the (String URL) 
 
-	{
+    {
     	cb = new CrossBrowser();
     	cb.setUp();
     	sp = new SignUp_page(cb.driver);
     	sp.get_url(URL);
-	}
+    }
     
-	@And("into the Username field enter input {string}")
-	public void into_the_username_field_enter_valid_input(String un) throws InterruptedException 
+    @And("into the Username field enter input {string}")
+    public void into_the_username_field_enter_valid_input(String un) throws InterruptedException 
 	
-	{
-		Thread.sleep(2000);
-		sp.enter_username(un);			
-	}
+    {
+	Thread.sleep(2000);
+	sp.enter_username(un);			
+    }
 
 
-	@And("into the Email Address field enter input {string}")
-	public void into_the_email_address_field_enter_valid_input(String email) 
+    @And("into the Email Address field enter input {string}")
+    public void into_the_email_address_field_enter_valid_input(String email) 
 	
-	{
-		sp.enter_email(email);
-	}
+    {
+	sp.enter_email(email);
+    }
     
-	@Then("un_msg should contain {string}")
+    @Then("un_msg should contain {string}")
     public void username_error_msg(String msg)
+    
     {
     	sp.username_msg_assert(msg);
     }	    
 	
-	@And("email_msg should contain {string}")
+    @And("email_msg should contain {string}")
     public void email_error_msg(String msg)
+    
     {
     	sp.email_msg_assert(msg);;
     }
 	
-	@When("confirm Email Address {string}")
-	public void confirm_email_address(String email) 
+    @When("confirm Email Address {string}")
+    public void confirm_email_address(String email) 
 	
-	{
-		sp.confirm(email);
-	}
-    
-//	@Then ("email_confirm_msg should contains {string}")
-//    public void email_confirm_error_msg(String msg) throws InterruptedException
-//    
-//    {
-//    	sp.email_confirm_msg_assert(msg);;
-//    }
-    
-	@But("before enter pwd user clicks first on GotIt COOKIES")
+    {
+	sp.confirm(email);
+    }
+     
+    @But("before enter pwd user clicks first on GotIt COOKIES")
     public void cookies()
     
-	{
+    {
     	sp.cookies();
     }
 	
-	@When("into the Password field enter pwd input {string}")
-	public void into_the_password_field_enter_valid_pwd_input(String pwd) throws InterruptedException 
+    @When("into the Password field enter pwd input {string}")
+    public void into_the_password_field_enter_valid_pwd_input(String pwd) throws InterruptedException 
 	
-	{
-		sp.enter_password(pwd);
-	}
+    {
+	sp.enter_password(pwd);
+    }
     @Then ("pwd_msg should contains {string}")
     public void pwd_msg_assertion(String msg)
     {
@@ -88,25 +83,18 @@ public class SignUp_steps{
     }    
 	
     @And("pwd title should contain {string}")
-	public void degree_of_security(String msg)
-	{
-		sp.assertions(msg);
+    public void degree_of_security(String msg)
+    {
+	sp.assertions(msg);
     	
-	}
+    }
 
-	@When("confirm Password {string}")
-	public void confirm_password(String pwd) throws InterruptedException 
+    @When("confirm Password {string}")
+    public void confirm_password(String pwd) throws InterruptedException 
 	
-	{
-		sp.confirm_pwd(pwd);
-	}
-	
-//    @Then("pwd_confirm_msg should contains {string}")
-//    public void pwd_confirm_msg_assertion(String msg) 
-//    {
-//    	sp.pwd_confirm_msg_assert(msg);
-//    }
-
+    {
+	sp.confirm_pwd(pwd);
+    }	
     
     @And("before check agree box, click on link Tersm and Conditions and title should be {string} and navigate back")
     public void click_Terms_link_and_get_back(String title) 
@@ -115,19 +103,19 @@ public class SignUp_steps{
     	sp.go_to_the_link_Terms_and_get_back(title);;
     }
     
-	@Then("click on agrees chack-box")
-	public void click_on_agrees_chack_boxes_and_i_m_not_a_robot() throws InterruptedException 
-	
-	{
-		sp.AGREE();
-	}
-	
-    @And("click on chack-box2")   
-	public void click_on_chackBox2() throws InterruptedException
+    @Then("click on agrees chack-box")
+    public void click_on_agrees_chack_boxes_and_i_m_not_a_robot() throws InterruptedException 
 	
     {
-		sp.Confirm_to_receive_Newsletter();	
-	}
+	sp.AGREE();
+    }
+	
+    @And("click on chack-box2")   
+    public void click_on_chackBox2() throws InterruptedException
+	
+    {
+	sp.Confirm_to_receive_Newsletter();	
+    }
     
  
 
@@ -138,4 +126,5 @@ public class SignUp_steps{
     {
     	sp.close_the_browser();
     }
+
 }
