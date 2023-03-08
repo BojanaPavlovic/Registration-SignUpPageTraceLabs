@@ -2,9 +2,9 @@
 
 Feature: Sign Up Fields - registration page
 	
-	Background:
+  Background:
 	
-	  Given Navigate to the "https://etherscan.io/register"
+    Given Navigate to the "https://etherscan.io/register"
     But before enter pwd user clicks first on GotIt COOKIES   
 
     
@@ -27,8 +27,8 @@ Feature: Sign Up Fields - registration page
     
 
     
-	@test2
-  Scenario Outline: Negative test cases for username field -> Username field is filled with less than five necessary characters | 
+  @test2
+  Scenario Outline: Negative test cases for username field -> Username field is filled with less than five necessary characters  
     And into the Username field enter input "<invalid_user_input>"
     And into the Email Address field enter input "bojka.bg@gmail.com"
     Then un_msg should contain "<error_msg>"
@@ -46,13 +46,13 @@ Feature: Sign Up Fields - registration page
 
 
     Examples: 
-      | invalid_user_input  | 							error_msg 			        |		
-      |	Bojana	            | 																		  |
-      | Boja                | Please enter at least 5 characters.	  |      
-      |	@$$%^&							|	Only alphanumeric characters allowed. |
+      | invalid_user_input  | 			error_msg 			        |		
+      |	Bojana	            | 								|										  
+      | Boja                | Please enter at least 5 characters.	  		|      
+      |	@$$%^&		    | Only alphanumeric characters allowed.                     |
 
   
-	@test3
+  @test3
   Scenario Outline: Test cases about password security field -> Password could be /Weak/Medium/Strong  
     And into the Username field enter input "Dejana"
     And into the Email Address field enter input "bojka.bg@gmail.com"
@@ -71,12 +71,12 @@ Feature: Sign Up Fields - registration page
 
 
     Examples: 
-      | pwd								  | 							status_of_pwd_security 			        |		
-      |	12345678					  | Weak! 																		  			|
-      | Javolimgrafiku123   | Medium!															  						|      
-      |	Javolimgrafiku123$	|	Strong!																 						|
+      | pwd		    | 				status_of_pwd_security 			        |		                            
+      |	12345678	    | Weak! 									|							  			
+      | Javolimgrafiku123   | Medium!									|						  						      
+      |	Javolimgrafiku123$  | Strong!									|							 						
 
-	@test4
+  @test4
   Scenario Outline: Negative test cases for email field -> | Input which is not fit with an email form    
     And into the Username field enter input "Dejana"
     And into the Email Address field enter input "<email_invalid_input>"
@@ -95,12 +95,12 @@ Feature: Sign Up Fields - registration page
 
 
     Examples: 
-      | email_invalid_input			| worning_msg_about_invalid_inputs							 		|		
-      |	Bojana					  		  | Please enter a valid email address. 							|
-      | @bojana   							| Please enter a valid email address.								|      
-      |	1234567890							|	Please enter a valid email address.								|
+      | email_invalid_input| worning_msg_about_invalid_inputs    |		
+      |	Bojana	           | Please enter a valid email address. |
+      | @bojana   	   | Please enter a valid email address. |      
+      |	1234567890	   | Please enter a valid email address. |
       
-	@test5
+  @test5
   Scenario Outline: Negative test cases for pwd field -> | Input which is not fit with an rules for pwd, eg. less then expected input.   
     And into the Username field enter input "Dejana"
     And into the Email Address field enter input "bojka.bg@gmail.com"
@@ -119,9 +119,9 @@ Feature: Sign Up Fields - registration page
 
 
     Examples: 
-      | invalid pwd input 			| error warning msg															 		|		
-      |	Bojana					  		  | Your password must be at least 8 characters long. |										 
-      | 1234567   						| Your password must be at least 8 characters long.	  |      							 
+      | invalid pwd input | error warning msg				      |											 			
+      |	Bojana		  | Your password must be at least 8 characters long. |										 
+      | 1234567   	  | Your password must be at least 8 characters long. |      							 
       																																																	 
       
       
