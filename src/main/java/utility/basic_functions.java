@@ -119,25 +119,7 @@ public class basic_functions
     
     {
     	
-		
-//		WebElement element = elements.confirm_pwd_element;
-//		boolean is_element_enabled = element.isEnabled();
-//		if(is_element_enabled == true) 
-//		
-//		{
-//			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-//			Thread.sleep(3000); 
-//			waitIsClickable(element);
-//			element.clear();
-//			element.sendKeys(pwd);  		
-//		}
-//		
-//		else 
-//		
-//		{
-//			Assert.assertTrue(false);
-//			System.out.println("Element is disabled");
-//		}
+
     	try {
     	    WebElement passwordConfirmField = driver.findElement(By.id("ContentPlaceHolder1_txtPassword2"));
     	    passwordConfirmField.click();
